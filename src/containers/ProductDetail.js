@@ -40,9 +40,10 @@ const decQuentity = () =>{
         {Object.keys(product).length === 0 ? (
             <div>...loading</div>
         ):(
-<Card style={{ width: '18rem' }}>
-  <Card.Img variant="top" src={image} />
-  <Card.Body>
+<div className='main-card-product'>
+<div className='main-card-product-img'><Card.Img variant="top" src={image} /></div>
+<div className='row-body'>
+  <Card.Body >
     <Card.Title>{title}</Card.Title>
     <Card.Title>${price}</Card.Title>
     <Card.Title>{category}</Card.Title>
@@ -55,11 +56,11 @@ const decQuentity = () =>{
         <div onClick={()=>setQuentity(quentity+1)} className="inc-box"><FaPlus/></div>
     </div>
     <Button variant="primary" onClick={() =>dispatch({type: 'ADD_TO_CART',payload:{product,quentity}})}>Add To Cart</Button>
-    <Button variant="primary">Remove To Cart</Button>
+    {/* <Button variant="primary">Remove To Cart</Button> */}
   </Card.Body>
-</Card>
-            
-           
+  </div>
+</div>
+
         )}
         </div>
     )
